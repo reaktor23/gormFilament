@@ -1,4 +1,4 @@
-module github.com/reaktor23/gormFilament
+module github.com/reaktor23/gormfilament
 
 go 1.16
 
