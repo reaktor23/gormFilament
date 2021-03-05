@@ -30,3 +30,13 @@ func CreateFilamentRGB(name string, material string, color colors.RGBColor, weig
 
 	return Filament
 }
+
+func CreateFilamentRGBHex(name string, material string, color string, weight uint, slot uint) Filament {
+	spoolColor, err := colors.ParseHEX(color)
+	if err != nil {
+		spoolColor, _ = colors.ParseHEX("#000000") //Black
+	}
+	Filament := Filament{Name: name, Material: material, Color: spoolColor.String(), Weight: weight, Slot: slot}
+
+	return Filament
+}
